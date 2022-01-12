@@ -249,6 +249,9 @@ html {
 .margin_left_50 {
   margin-left: 50px;
 }
+.flex3 {
+  flex: 3;
+}
 .flex_align_center {
   align-items: center;
 }

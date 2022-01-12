@@ -7,8 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style></style>
+
     <link rel="stylesheet" href="./global_css.css">
     <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_3136959_4vmxitkxrvb.css">
+
     <style>
         body {
             font-family: "Roboto", sans-serif;
@@ -29,6 +32,12 @@
             color: #5d6a76;
             font-weight: 500;
             font-size: 14px;
+            display: flex;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            position: relative;
+
         }
 
         .sign_up_div {
@@ -45,23 +54,157 @@
             color: #5d6a76;
             font-size: 14px;
         }
+
+        .border_bottom {
+            height: 2px;
+            background: #1f73e08a;
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            width: 0;
+            transition-duration: .8s;
+        }
+
+        .head_div_little:hover {
+            color: #197dff;
+        }
+
+        .head_div_little:hover .border_bottom {
+            width: 100%;
+            background: #197dff;
+
+        }
+
+        .select_option_div {
+            width: 200px;
+            background: white;
+            box-shadow: 1px -6px 14px rgb(2 3 3 / 15%);
+            position: absolute;
+            left: 513px;
+            top: 59px;
+            z-index: 10000;
+        }
+
+        .select_option_div>div {
+            height: 40px;
+            line-height: 40px;
+            color: #333;
+            padding-left: 10px;
+            font-size: 15px;
+            border-bottom: 1px solid rgba(238, 238, 238, 1.0);
+        }
+
+        .select_option_div>div:hover {
+            background: rgba(245, 245, 245, 1.0);
+        }
+
+        .h1text {
+            font-size: 34px;
+            color: #54626f;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .h2text {
+            font-size: 17px;
+            color: #5d6a76;
+            font-weight: 500;
+            margin: 5px auto 0;
+            line-height: 1.85;
+            text-align: center;
+
+        }
+
+        .file_big_div {
+            background: rgba(245, 248, 254, 1.0);
+            border: 3px dashed rgba(223, 234, 253, 1.0);
+            padding: 50px 0;
+        }
+
+        .file_button {
+            width: 200px;
+            background: #197dff;
+            color: #f3f3f3;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 20px;
+            text-transform: capitalize;
+            box-shadow: 0 10px 20px rgb(78 132 253 / 40%);
+            transition: .3s;
+            justify-content: space-between;
+        }
+
+        .file_desc {
+            color: #a9b5c3;
+            font-weight: 500;
+            font-size: 15px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .footer {
+            border-top: 1px solid rgba(225, 225, 225, 1.0);
+            padding-top: 40px;
+        }
+
+        .copyright {
+            color: #838383;
+            font-size: 14px;
+            font-family: "Roboto", sans-serif;
+            font-weight: 300;
+            margin-left: 20px;
+        }
     </style>
 </head>
 
 <body>
+    <div class="select_option_div">
+        <img src="./img/sjx.png" style="position: absolute;top: -15px;left:20px;width: 20px;" alt="">
+        <div>
+            <i class="iconfont icon-img" style="font-size: 12px;"></i> xxxx
+        </div>
+        <div>
+            <i class="iconfont icon-doc"></i> xxxx
+        </div>
+        <div>
+            <i class="iconfont icon-file-audio-o"></i> xxxx
+        </div>
+        <div>
+            <i class="iconfont icon-book"></i> xxxx
+        </div>
+        <div>
+            <i class="iconfont icon-Video-File"></i> xxxx
+        </div>
+        <div>
+            <i class="iconfont icon-shiyanshaobei"></i> xxxx
+        </div>
+    </div>
     <div>
         <div class="head">
             <div class="width_60 height_100 margin_auto display_flex flex_jusify_space flex_align_center">
-                <div class="display_flex flex_align_center">
+                <div class="display_flex flex_align_center headdiv">
                     <img src="./img/logo.png" class="logo" alt="">
-                    <div class="margin_left_50 head_div_little">
-                        pricing
+                    <div class="margin_left_50  head_div_little">
+                        <span>
+                            pricing
+                        </span>
+                        <i class="iconfont icon-arrow-down"
+                            style="margin-top: 0px;margin-left: 4px;font-size: 19px;"></i>
+                        <div class="border_bottom">
+                        </div>
                     </div>
                     <div class="margin_left_24 head_div_little">
                         pricing
+                        <div class="border_bottom">
+                        </div>
                     </div>
                     <div class="margin_left_24 head_div_little">
                         pricing
+                        <div class="border_bottom">
+                        </div>
                     </div>
                 </div>
                 <div class="display_flex flex_align_center">
@@ -75,10 +218,44 @@
 
             </div>
         </div>
+        <div class="display_flex">
+            <div class="flex_1"></div>
+            <div class="flex3">
+                <h1 class="h1text">
+                    Audio Converter
+                </h1>
+                <div class="h2text">
+                    The best web app to convert audio files online.
+                </div>
+                <div class="file_big_div text_center">
+                    <div class="file_button margin_auto">Choose Files</div>
+                    <div class="file_desc">
+                        Or drop files here. Max file size 1GB. <span style="color: #5f9ff5;">Sign up</span> for more
+                    </div>
+                </div>
+
+            </div>
+            <div class="flex_1"></div>
+        </div>
+        <div class="footer margin_top_4">
+            <div class="width_60 margin_auto display_flex flex_jusify_space">
+                <img src="./img/logo.png" alt="" style="height: 30px;">
+                <span class="copyright">
+                    © 2022 FreeConvert.com
+                </span>
+            </div>
+        </div>
+
     </div>
 </body>
 　　
 <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
-
+<script>
+    document.querySelector('.headdiv').onmouseenter = function (e) {
+        if (e.target.className.indexOf('head_div_little') > -1) {
+            alert(1)
+        }
+    }
+</script>
 
 </html>
