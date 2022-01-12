@@ -251,11 +251,9 @@
 　　
 <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
 <script>
-    document.querySelector('.headdiv').onmouseenter = function (e) {
-        if (e.target.className.indexOf('head_div_little') > -1) {
-            alert(1)
-        }
-    }
+    $('.headdiv').on('mouseenter', '.head_div_little', function (e) {
+        alert(1)
+    }) 
 </script>
 
 </html>
