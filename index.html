@@ -10,7 +10,8 @@
 
     <link rel="stylesheet" href="./global_css.css">
     <link rel="stylesheet" href="./index.css">
-    <link rel="stylesheet" href="http://at.alicdn.com/t/font_3136959_4vmxitkxrvb.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_3136959_y1p3wo8knd8.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 
     <style>
         body {
@@ -83,6 +84,8 @@
             left: 513px;
             top: 59px;
             z-index: 10000;
+            opacity: 0;
+            transition-duration: .4s;
         }
 
         .select_option_div>div {
@@ -161,99 +164,238 @@
 </head>
 
 <body>
-    <div class="select_option_div">
-        <img src="./img/sjx.png" style="position: absolute;top: -15px;left:20px;width: 20px;" alt="">
-        <div>
-            <i class="iconfont icon-img" style="font-size: 12px;"></i> xxxx
-        </div>
-        <div>
-            <i class="iconfont icon-doc"></i> xxxx
-        </div>
-        <div>
-            <i class="iconfont icon-file-audio-o"></i> xxxx
-        </div>
-        <div>
-            <i class="iconfont icon-book"></i> xxxx
-        </div>
-        <div>
-            <i class="iconfont icon-Video-File"></i> xxxx
-        </div>
-        <div>
-            <i class="iconfont icon-shiyanshaobei"></i> xxxx
-        </div>
-    </div>
-    <div>
-        <div class="head">
-            <div class="width_60 height_100 margin_auto display_flex flex_jusify_space flex_align_center">
-                <div class="display_flex flex_align_center headdiv">
-                    <img src="./img/logo.png" class="logo" alt="">
-                    <div class="margin_left_50  head_div_little">
-                        <span>
-                            pricing
-                        </span>
-                        <i class="iconfont icon-arrow-down"
-                            style="margin-top: 0px;margin-left: 4px;font-size: 19px;"></i>
-                        <div class="border_bottom">
-                        </div>
-                    </div>
-                    <div class="margin_left_24 head_div_little">
-                        pricing
-                        <div class="border_bottom">
-                        </div>
-                    </div>
-                    <div class="margin_left_24 head_div_little">
-                        pricing
-                        <div class="border_bottom">
-                        </div>
-                    </div>
-                </div>
-                <div class="display_flex flex_align_center">
-                    <div class="login_text">
-                        Login
-                    </div>
-                    <div class="sign_up_div">
-                        Sign Up
-                    </div>
-                </div>
+    <div id="app">
 
+        <div class="select_option_div">
+            <img src="./img/sjx.png" style="position: absolute;top: -15px;left:20px;width: 20px;" alt="">
+            <div>
+                <i class="iconfont icon-img" style="font-size: 12px;"></i> xxxx
+            </div>
+            <div>
+                <i class="iconfont icon-doc"></i> xxxx
+            </div>
+            <div>
+                <i class="iconfont icon-file-audio-o"></i> xxxx
+            </div>
+            <div>
+                <i class="iconfont icon-book"></i> xxxx
+            </div>
+            <div>
+                <i class="iconfont icon-Video-File"></i> xxxx
+            </div>
+            <div>
+                <i class="iconfont icon-shiyanshaobei"></i> xxxx
             </div>
         </div>
-        <div class="display_flex">
-            <div class="flex_1"></div>
-            <div class="flex3">
-                <h1 class="h1text">
-                    Audio Converter
-                </h1>
-                <div class="h2text">
-                    The best web app to convert audio files online.
+        <div>
+            <div class="head">
+                <div class="width_60 height_100 margin_auto display_flex flex_jusify_space flex_align_center">
+                    <div class="display_flex flex_align_center headdiv">
+                        <img src="./img/logo.png" class="logo" alt="">
+                        <div class="margin_left_50  head_div_little">
+                            <span>
+                                pricing
+                            </span>
+                            <i class="iconfont icon-arrow-down"
+                                style="margin-top: 0px;margin-left: 4px;font-size: 19px;"></i>
+                            <div class="border_bottom">
+                            </div>
+                        </div>
+                        <div class="margin_left_24 head_div_little">
+                            pricing
+                            <div class="border_bottom">
+                            </div>
+                        </div>
+                        <div class="margin_left_24 head_div_little">
+                            pricing
+                            <div class="border_bottom">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="display_flex flex_align_center">
+                        <div class="login_text">
+                            Login
+                        </div>
+                        <div class="sign_up_div">
+                            Sign Up
+                        </div>
+                    </div>
+
                 </div>
-                <div class="file_big_div text_center">
+            </div>
+            <div class="display_flex">
+                <div class="flex_1"></div>
+                <div class="flex3">
+                    <h1 class="h1text">
+                        Audio Converter
+                    </h1>
+                    <div class="h2text">
+                        The best web app to convert audio files online.
+                    </div>
+                    <!-- <div class="file_big_div text_center">
                     <div class="file_button margin_auto">Choose Files</div>
                     <div class="file_desc">
                         Or drop files here. Max file size 1GB. <span style="color: #5f9ff5;">Sign up</span> for more
                     </div>
+                </div> -->
+                    <div class="boxxhasupload position_relative margin_top_50px">
+                        <div class="addbutton">
+                            <i class="icon-add-bold iconfont"></i>
+                            <span> Add More Files</span>
+                        </div>
+                        <div class="singleHasload display_flex flex_align_center flex_jusify_space"
+                            v-for="itemsingle in bigArr">
+                            <span class="upfiletext1">
+                                {{itemsingle.imgname}}
+                            </span>
+                            <div class="display_flex flex_align_center">
+                                <div class="uptext2">{{itemsingle.size}}</div>
+                                <div class="margin_left_10 upfiletext1">Convert to</div>
+                                <el-select class="margin_left_10" style="width: 100px;" v-model="itemsingle.value"
+                                    placeholder="请选择">
+                                    <el-option v-for="item in selectd_arr" :key="item.value" :label="item.label"
+                                        :value="item.value">
+                                    </el-option>
+                                </el-select>
+                                <i class="icon-setting-filling iconfont margin_left_10 iconcolor"></i>
+                                <i class="icon-cancel iconfont iconcolor margin_left_28" style="margin-top: -2px;"></i>
+                            </div>
+                        </div>
+                        <div class="transdiv display_flex flex_jusify_space padding_left_20px padding_right_20px">
+                            <div class="display_flex flex_align_center">
+                                <div class="footerdesc">
+                                    Convert all files To
+                                </div>
+                                <el-select class="margin_left_10" style="width: 100px;" v-model="value"
+                                    placeholder="请选择">
+                                    <el-option v-for="item in selectd_arr" :key="item.value" :label="item.label"
+                                        :value="item.value">
+                                    </el-option>
+                                </el-select>
+                            </div>
+                            <div class="display_flex  flex_align_center">
+                                <el-button type="primary" class="convertButton">Convert <i
+                                        class="transright el-icon-right" style="font-weight: 800;"></i>
+                                </el-button>
+
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-
+                <div class="flex_1"></div>
             </div>
-            <div class="flex_1"></div>
-        </div>
-        <div class="footer margin_top_4">
-            <div class="width_60 margin_auto display_flex flex_jusify_space">
-                <img src="./img/logo.png" alt="" style="height: 30px;">
-                <span class="copyright">
-                    © 2022 FreeConvert.com
-                </span>
+            <div class="footer margin_top_4">
+                <div class="width_60 margin_auto display_flex flex_jusify_space">
+                    <img src="./img/logo.png" alt="" style="height: 30px;">
+                    <span class="copyright">
+                        © 2022 FreeConvert.com
+                    </span>
+                </div>
             </div>
-        </div>
 
+        </div>
     </div>
+
 </body>
 　　
 <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
 <script>
     $('.headdiv').on('mouseenter', '.head_div_little', function (e) {
-        alert(1)
-    }) 
+        var top = $(this).offset().top
+        var left = $(this).offset().left
+        $('.select_option_div').css({ 'opacity': '1' })
+        $('.select_option_div').css({ left: left + 'px', top: top + 50 + 'px' })
+    })
+    $('.headdiv').on('mouseleave', '.head_div_little', function (e) {
+        if (e.target.className.indexOf('select_option_div') > -1) {
+            $('.select_option_div').css({ 'opacity': '0' })
+        }
+    })
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue!',
+            selectd_arr: [{ value: 'png', label: 'png' }, { value: 'jpg', label: 'jpg' }, { value: 'pdf', label: 'pdf' }, { value: 'svg', label: 'svg' }],
+            value: 'png',
+            bigArr: [{ imgname: 'Wechat.asd.png', size: '152kb', value: 'png' }, { imgname: 'Wechat.afsdasf.png', size: '122kb', value: 'svg' }]
+        }
+    })
 </script>
+<style>
+    .boxxhasupload {
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        border-bottom: none;
+
+    }
+
+    .singleHasload {
+        padding: 0 20px;
+        height: 64px;
+        border-bottom: 1px solid #ddd;
+
+    }
+
+    .upfiletext1 {
+        color: #5d6a76;
+        font-size: 14px;
+    }
+
+    .uptext2 {
+        color: #a3a3a3;
+        font-size: 14px;
+    }
+
+    .iconcolor {
+        color: rgba(204, 204, 204, 1.0);
+        font-size: 23px;
+    }
+
+    .transdiv {
+        background: rgba(238, 238, 238, 1.0);
+        height: 80px;
+    }
+
+    .footerdesc {
+        font-size: 16px;
+        color: #5d6a76;
+    }
+
+    .addbutton {
+        color: #197dff;
+        font-size: 20px;
+        background: rgba(237, 237, 237, 1.0);
+        height: 44px;
+        line-height: 44px;
+        width: 200px;
+        text-align: center;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border: 1px solid #ddd;
+        position: absolute;
+        left: 0;
+        font-weight: 800;
+        top: -46px;
+
+
+    }
+
+    .margin_top_50px {
+        margin-top: 50px;
+    }
+
+    .transright {
+        transition-duration: .4s;
+    }
+
+    .convertButton:hover .transright {
+        transform: translateX(9px);
+    }
+</style>
 
 </html>

@@ -130,6 +130,12 @@ html {
 .iconfont {
   font-size: none;
 }
+.padding_left_20px {
+  padding-left: 20px;
+}
+.padding_right_20px {
+  padding-right: 20px;
+}
 .margin_top_10 {
   margin-top: 10px;
 }
